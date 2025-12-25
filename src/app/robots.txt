@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /profile/
+Disallow: /checkout/
+
+Sitemap: https://level-delivery.com/sitemap.xml
