@@ -57,13 +57,13 @@ export default function HomeClient({ initialCategories, initialRestaurants }: Ho
         : restaurants;
 
     return (
-        <div className="space-y-12">
+        <div className="space-y-8 md:space-y-12">
             {/* Hero Section */}
-            <section className="bg-crimson border-4 border-dead-black p-10 rounded-[32px] shadow-neo-lg text-white">
-                <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-6">
+            <section className="bg-crimson border-4 border-dead-black p-6 md:p-10 rounded-[28px] md:rounded-[32px] shadow-neo-lg text-white">
+                <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-tight md:leading-none mb-4 md:mb-6">
                     {t('home.hero_title')}
                 </h1>
-                <p className="text-xl font-bold uppercase tracking-tight max-w-xl">
+                <p className="text-lg md:text-xl font-bold uppercase tracking-tight max-w-xl opacity-90">
                     {t('home.hero_subtitle')}
                 </p>
             </section>

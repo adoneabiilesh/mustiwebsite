@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import BottomNav from "@/components/BottomNav";
 import { I18nProvider } from '@/lib/i18n';
 import { Toaster } from 'sonner';
 import { Analytics } from '@vercel/analytics/react';
@@ -37,9 +38,10 @@ export default function RootLayout({
             }}
           />
           <Header />
-          <main className="min-h-screen pt-24 pb-12 px-4 max-w-7xl mx-auto">
+          <main className="min-h-screen pt-20 md:pt-24 pb-32 md:pb-12 px-4 max-w-7xl mx-auto">
             {children}
           </main>
+          <BottomNav />
           <Analytics />
           <SpeedInsights />
         </I18nProvider>

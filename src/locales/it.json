@@ -30,6 +30,14 @@
         "searching": "Ricerca dell'eccellenza...",
         "no_items": "Nessun articolo trovato per questo genere. Esplora i ristoranti qui sotto!"
     },
+    "search": {
+        "title": "Cerca",
+        "placeholder": "Cosa desideri?",
+        "no_results": "Nessun risultato trovato per \"{{query}}\"",
+        "try_another": "Prova a cercare qualcos'altro come \"Pizza\" o \"Hamburger\".",
+        "restaurants": "Ristoranti",
+        "items": "Piatti"
+    },
     "about": {
         "title": "LA NOSTRA STORIA",
         "story_p1": "SIAMO LEVEL. IL SERVIZIO DI CONSEGNA CIBO PIÙ AUDADE DELLA CITTÀ. CERCHI \"CONSEGNA CIBO VICINO A ME\"? HAI APPENA TROVATO IL MEGLIO.",

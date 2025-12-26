@@ -30,6 +30,14 @@
         "searching": "Searching for excellence...",
         "no_items": "No direct items found for this genre yet. Explore the restaurants below!"
     },
+    "search": {
+        "title": "Search",
+        "placeholder": "What are you craving?",
+        "no_results": "No results found for \"{{query}}\"",
+        "try_another": "Try searching for something else like \"Pizza\" or \"Burgers\".",
+        "restaurants": "Restaurants",
+        "items": "Menu Items"
+    },
     "about": {
         "title": "OUR BOLD STORY",
         "story_p1": "WE ARE LEVEL. THE BOLDEST FOOD DELIVERY SERVICE IN TOWN. SEARCHING FOR \"FOOD DELIVERY NEAR ME\"? YOU JUST FOUND THE BEST.",

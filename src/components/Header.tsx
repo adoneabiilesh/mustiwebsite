@@ -99,7 +99,7 @@ export default function Header() {
                                 </Button>
                             </Link>
 
-                            <div className="flex border-2 border-dead-black overflow-hidden rounded-xl h-10 md:h-12">
+                            <div className="hidden md:flex border-2 border-dead-black overflow-hidden rounded-xl h-12">
                                 <button
                                     onClick={() => setLanguage('en')}
                                     className={cn(

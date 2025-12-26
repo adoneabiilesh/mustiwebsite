@@ -58,8 +58,8 @@ export default function ProfilePage() {
     return (
         <div className="max-w-6xl mx-auto py-12 px-4 space-y-12">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                <div className="space-y-2">
-                    <h1 className="text-6xl font-black uppercase tracking-tighter italic">{t('profile.title')}</h1>
+                <div className="space-y-px md:space-y-2">
+                    <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter italic">{t('profile.title')}</h1>
                     <p className="text-gray-500 font-bold uppercase tracking-tight flex items-center gap-2">
                         <User className="w-4 h-4" /> {user?.email}
                     </p>
@@ -69,9 +69,9 @@ export default function ProfilePage() {
                 </Button>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
                 {/* Account Summary */}
-                <Card className="p-8 space-y-8 h-fit bg-ivory">
+                <Card className="p-6 md:p-8 space-y-6 md:space-y-8 h-fit bg-ivory">
                     <h2 className="text-2xl font-black uppercase tracking-tight">{t('profile.account_stats')}</h2>
                     <div className="space-y-4">
                         <div className="bg-white border-2 border-dead-black p-4 rounded-2xl flex justify-between items-center">
@@ -107,15 +107,15 @@ export default function ProfilePage() {
                                                     {new Date(order.created_at).toLocaleDateString()}
                                                 </span>
                                             </div>
-                                            <h3 className="text-2xl font-black uppercase tracking-tight">
+                                            <h3 className="text-lg md:text-2xl font-black uppercase tracking-tight">
                                                 {order.restaurants?.name || 'MULTIPLE RESTAURANTS'}
                                             </h3>
                                             <p className="text-xs font-bold text-gray-500 uppercase">
                                                 ID: <span className="text-dead-black">{order.order_number}</span>
                                             </p>
                                         </div>
-                                        <div className="flex flex-row md:flex-col justify-between items-end gap-2">
-                                            <span className="text-3xl font-black italic">{formatPrice(order.total)}</span>
+                                        <div className="flex flex-row md:flex-col justify-between items-end gap-2 border-t-2 border-dashed border-gray-100 pt-4 md:border-none md:pt-0">
+                                            <span className="text-2xl md:text-3xl font-black italic">{formatPrice(order.total)}</span>
                                             <span className={`text-[10px] font-black uppercase tracking-widest ${order.payment_status === 'paid' ? 'text-green-600' : 'text-crimson'
                                                 }`}>
                                                 PAYMENT: {order.payment_status}

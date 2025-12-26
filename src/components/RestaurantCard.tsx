@@ -34,10 +34,10 @@ export default function RestaurantCard({ restaurant }: RestaurantCardProps) {
                         </div>
                     )}
                 </div>
-                <CardContent className="p-5 flex-1 flex flex-col justify-between">
+                <CardContent className="p-4 md:p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <div className="flex justify-between items-start mb-2">
-                            <h3 className="text-xl font-black uppercase tracking-tight leading-tight">
+                        <div className="flex justify-between items-start mb-2 group">
+                            <h3 className="text-lg md:text-xl font-black uppercase tracking-tight leading-tight group-hover:text-crimson transition-colors">
                                 {restaurant.name}
                             </h3>
                             <div className="flex items-center gap-1 bg-white border-2 border-dead-black px-2 py-0.5 rounded-full text-xs font-black">
