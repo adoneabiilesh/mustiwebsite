@@ -18,15 +18,8 @@ export default function ProfilePage() {
     const router = useRouter();
 
     useEffect(() => {
-        const fetchUserAndOrders = async () => {
-            const { data: { session } } = await supabase.auth.getSession();
-
-            if (!session) {
-                router.push('/auth');
-                return;
-            }
-
-            setUser(session.user);
+        const fetchUserAndOrders = async (userId: string, userEmail: string) => {
+            setUser({ id: userId, email: userEmail });
 
             const { data: ordersData, error } = await supabase
                 .from('orders')
@@ -34,7 +27,7 @@ export default function ProfilePage() {
                     *,
                     restaurants (name)
                 `)
-                .eq('user_id', session.user.id)
+                .eq('user_id', userId)
                 .order('created_at', { ascending: false });
 
             if (!error) {
@@ -43,7 +36,25 @@ export default function ProfilePage() {
             setLoading(false);
         };
 
-        fetchUserAndOrders();
+        // Check initial session
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            if (session?.user) {
+                fetchUserAndOrders(session.user.id, session.user.email || '');
+            } else {
+                router.push('/auth');
+            }
+        });
+
+        // Listen for auth state changes
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+            if (event === 'SIGNED_IN' && session?.user) {
+                fetchUserAndOrders(session.user.id, session.user.email || '');
+            } else if (event === 'SIGNED_OUT') {
+                router.push('/auth');
+            }
+        });
+
+        return () => subscription.unsubscribe();
     }, [router]);
 
     const handleSignOut = async () => {

@@ -20,6 +20,12 @@ export const metadata: Metadata = {
   },
   description: "Order bold flavors from local restaurants. Fast, high-quality food delivery for those who level up their lunch.",
   keywords: ["food delivery", "restaurant", "menu", "order food online", "fast delivery", "local eats"],
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
 };
 
 export default function RootLayout({
